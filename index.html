@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet" />
+    <script defer src="scripts.js"></script>
+    <title>ListEasy To-Do</title>
+  </head>
+  <body>
+    <header>
+      <h1>To-Do Lists</h1>
+      <!-- <nav>
+        <ul class="nav-bar">
+          <li class="nav-item"><a href="" class="nav-link">Log Out</a></li>
+          <li class="nav-item"><a href="" class="nav-link">My Account</a></li>
+        </ul>
+      </nav> -->
+    </header>
+    <div class="task-lists-container">
+      <h2 class="task-lists-title">My Lists</h2>
+      <ul id="myLists"></ul>
+      <form action="" class="add-new-list" id="new-list-form">
+        <button class="btn-add-new-list" aria-label="create new list">+</button>
+        <input
+          type="text"
+          class="new-list"
+          id="new-list-input"
+          placeholder="New List Name"
+          aria-label="new list name" />
+      </form>
+    </div>
+    <div class="cur-list-container" data-list-display-container>
+      <div class="cur-list-header">
+        <h2 class="cur-list-title" data-list-title>Shopping</h2>
+        <p class="remaining-tasks" data-remaining-task-count>2 Tasks left</p>
+      </div>
+      <div class="cur-list-body">
+        <div class="task-items" data-task-items></div>
+        <div class="add-new-task">
+          <form action="" data-new-task-form>
+            <button class="btn-add-new-task" aria-label="create new task">
+              +
+            </button>
+            <input
+              type="text"
+              class="new-task"
+              placeholder="New Task Name"
+              aria-label="new task name"
+              data-new-task-input />
+          </form>
+        </div>
+        <div class="task-btns">
+          <button class="btn-delete" id="delete-task-btn">
+            Clear Completed Tasks
+          </button>
+          <button class="btn-delete" id="delete-list-btn">Delete List</button>
+        </div>
+      </div>
+    </div>
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label></label>
+      </div>
+    </template>
+  </body>
+</html>

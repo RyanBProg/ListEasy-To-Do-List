@@ -1,0 +1,210 @@
+:root {
+  --clr-dark: rgb(67, 67, 67);
+  --clr-light: rgb(180, 241, 253);
+  --clr-light-high: rgb(0, 155, 186);
+  --clr-good: rgb(102, 196, 121);
+  --clr-good-dark: rgb(71, 134, 83);
+  --clr-bad: rgb(241, 119, 123);
+  --clr-bad-dark: rgb(189, 93, 97);
+
+  --txt-light: white;
+  --txt-dark: black;
+
+  --shadow: 2px 2px 13px 1px rgb(159, 159, 159);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  display: grid;
+  grid:
+    "header header header header" auto
+    "... lists current ..." auto /
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+  background-color: var(--clr-light);
+  grid-gap: 2em;
+}
+
+h1 {
+  color: var(--clr-light-high);
+  font-size: 3rem;
+  letter-spacing: 0.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid white;
+}
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--clr-light-high);
+}
+
+.nav-link:hover {
+  color: var(--txt-light);
+}
+
+/* lists */
+
+.task-lists-container {
+  grid-area: lists;
+}
+
+.task-lists-title {
+  background-color: var(--clr-light-high);
+  color: var(--clr-light);
+  padding: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.task-lists-container ul {
+  line-height: 2rem;
+  color: var(--clr-dark);
+  margin-bottom: 1em;
+  list-style: none;
+}
+
+.task-lists-container ul li {
+  border-bottom: 1px solid white;
+  padding: 0 5px;
+}
+
+.active-list {
+  color: var(--clr-good);
+}
+
+.task-lists-container ul li:hover {
+  background-color: var(--clr-light-high);
+  color: var(--txt-light);
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+}
+
+.btn-add-new-list,
+.btn-add-new-task {
+  padding: 0.5em;
+  border: 0;
+  background-color: var(--clr-good);
+  cursor: pointer;
+}
+
+.btn-add-new-list:hover,
+.btn-add-new-task:hover {
+  background-color: var(--clr-good-dark);
+  color: var(--txt-light);
+}
+
+.add-new-list input {
+  border: 0;
+  padding: 0.5em;
+  width: 100%;
+}
+
+/* current list */
+
+.cur-list-container {
+  grid-area: current;
+  background-color: var(--txt-light);
+  box-shadow: var(--shadow);
+}
+
+.cur-list-header {
+  background-color: var(--clr-light-high);
+  color: var(--clr-light);
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cur-list-title {
+  padding: 0.3em;
+}
+
+p {
+  color: var(--txt-dark);
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  padding-right: 0.5em;
+}
+
+.cur-list-body {
+  padding: 0 20px 20px 20px;
+}
+
+.task-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  border-bottom: 1px solid var(--clr-light);
+  padding: 10px 0;
+}
+
+.task label:hover {
+  color: var(--clr-light-high);
+  cursor: pointer;
+}
+
+[type="checkbox"] {
+  margin-right: 10px;
+}
+
+[type="checkbox"]:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.add-new-task {
+  padding: 10px 0;
+}
+
+.new-task {
+  border: 0;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.task-btns {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.btn-delete {
+  padding: 0.5em;
+  border: 0;
+  background-color: var(--clr-bad);
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: var(--clr-bad-dark);
+  color: var(--txt-light);
+}
